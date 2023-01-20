@@ -1,3 +1,4 @@
+from unicodedata import name
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -5,11 +6,14 @@ from django.http import HttpResponse
 # HTTP RESPONSE
 
 def home(request):
-    return render(request, 'recipes/pages/home.html', context={'name': 'gabriel rodrigues'})
+    return render(request, 'recipes/pages/home.html', context={'name': 'Adriana Silva'})
 
 def sobre(request):
-    return HttpResponse('SOBRE - Hello Django')
+    return render(request,'sobre.html')
 
 def contato(request):
-    return HttpResponse('CONTATO - Hello Django')
+    return render(request,'contato.html')
+
+def receitas(request):
+    return render(request, 'recipes/pages/receitas.html', context={'name': 'Adriana Silva'})
 # Create your views here.
